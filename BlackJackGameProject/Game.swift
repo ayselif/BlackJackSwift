@@ -63,10 +63,12 @@ class Game{
         player.showAllCardsDetail()
     }
     
+
     static func createCardDeck() -> [Card] {
+        let cardNames = ["A", "Q", "J", "K", "2","3","4","5","6","7","8","9","10"]
         var cardDeck: [Card] = []
         
-        for name in Card.cardNames {
+        for name in cardNames {
             cardDeck.append(Card(name: name, type: .HEARTS))
             cardDeck.append(Card(name: name, type: .DIAMONDS))
             cardDeck.append(Card(name: name, type: .CLUBS))
