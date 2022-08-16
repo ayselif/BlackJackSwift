@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C728CB0928AACA7F00F84E56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB0828AACA7F00F84E56 /* main.swift */; };
+		C728CB1228AACACF00F84E56 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1128AACACF00F84E56 /* Dealer.swift */; };
+		C728CB1428AACD9A00F84E56 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1328AACD9A00F84E56 /* Player.swift */; };
+		C728CB1628AACDA600F84E56 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1528AACDA600F84E56 /* Game.swift */; };
+		C728CB1828AACDD200F84E56 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1728AACDD200F84E56 /* Card.swift */; };
+		C728CB1A28AB682000F84E56 /* GameResultTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1928AB682000F84E56 /* GameResultTable.swift */; };
+		C728CB1C28AB685E00F84E56 /* CardTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728CB1B28AB685E00F84E56 /* CardTypeList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,12 @@
 /* Begin PBXFileReference section */
 		C728CB0528AACA7F00F84E56 /* BlackJackGameProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlackJackGameProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		C728CB0828AACA7F00F84E56 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C728CB1128AACACF00F84E56 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		C728CB1328AACD9A00F84E56 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C728CB1528AACDA600F84E56 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C728CB1728AACDD200F84E56 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C728CB1928AB682000F84E56 /* GameResultTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTable.swift; sourceTree = "<group>"; };
+		C728CB1B28AB685E00F84E56 /* CardTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,12 @@
 			isa = PBXGroup;
 			children = (
 				C728CB0828AACA7F00F84E56 /* main.swift */,
+				C728CB1128AACACF00F84E56 /* Dealer.swift */,
+				C728CB1328AACD9A00F84E56 /* Player.swift */,
+				C728CB1528AACDA600F84E56 /* Game.swift */,
+				C728CB1728AACDD200F84E56 /* Card.swift */,
+				C728CB1928AB682000F84E56 /* GameResultTable.swift */,
+				C728CB1B28AB685E00F84E56 /* CardTypeList.swift */,
 			);
 			path = BlackJackGameProject;
 			sourceTree = "<group>";
@@ -120,7 +138,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C728CB1228AACACF00F84E56 /* Dealer.swift in Sources */,
+				C728CB1A28AB682000F84E56 /* GameResultTable.swift in Sources */,
+				C728CB1428AACD9A00F84E56 /* Player.swift in Sources */,
+				C728CB1828AACDD200F84E56 /* Card.swift in Sources */,
 				C728CB0928AACA7F00F84E56 /* main.swift in Sources */,
+				C728CB1628AACDA600F84E56 /* Game.swift in Sources */,
+				C728CB1C28AB685E00F84E56 /* CardTypeList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
