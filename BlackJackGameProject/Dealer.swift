@@ -23,10 +23,16 @@ class Dealer{
     
     func getCards(count: Int) -> [Card] {
         let selectedCards = Array(cardDeck[0 ..< count])
-        print("Selected Card Count \(selectedCards.count)")
         cardDeck.removeSubrange(0 ..< count)
-        print("All Card Count \(cardDeck.count)")
         return selectedCards
+    }
+    
+    func getDealerScore() -> Int {
+        var score: Int = 0
+        for card in cards {
+            score += card.value
+        }
+        return score
     }
     
     func checkResult(playerScore: Int) -> GameResult {
@@ -51,13 +57,7 @@ class Dealer{
         }
     }
     
-    func getDealerScore() -> Int {
-        var score: Int = 0
-        for card in cards {
-            score += card.value
-        }
-        return score
-    }
+   
     
     func canUserContinue() -> Bool {
         print("***** The cards is not enough for continue *****")
@@ -80,7 +80,7 @@ class Dealer{
     }
     
     
-    func isUserWantNextCart() -> Bool {
+    func isUserWantNextCard() -> Bool {
         print("Make a choice: Done D" + " Take a new cart: Press C:\n")
         let input = readLine()?.lowercased()
         
@@ -91,7 +91,7 @@ class Dealer{
             return false
         default:
             print("It is unsupported option. .....")
-            return isUserWantNextCart()
+            return isUserWantNextCard()
         }
     }
     
@@ -100,7 +100,6 @@ class Dealer{
         print("======= Dealer Cards =======")
         for (index, card) in cards.enumerated() {
             if (index == 0 && showAll == false) {
-                // Mask first card
                 print("#########")
             } else {
                 print(card.getTitle())

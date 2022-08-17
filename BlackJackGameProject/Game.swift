@@ -1,18 +1,29 @@
 import Foundation
 
 class Game{
-    private let player: Player = Player()
+    private let player: Player
     private let dealer: Dealer = Dealer(cardDeck: Game.createCardDeck())
+    private let fileHelper: FileOperationHelper = FileOperationHelper() // 352
+    private var bet: Int = 0
+    
+    init() {
+        player = Player(helper: fileHelper)
+    }
     
     func startGame(){
+        fileHelper.createFileIfNeeded()
         print("Welcome BlackJack Table")
         newGameSession()
     }
     
     private func newGameSession() {
+        checkStartBalance()
+        print("Total Balance \(player.getPlayerPoint())")
         print("**************** New Game Started ******************")
         dealer.startGame()
         player.startGame()
+        
+        bet = player.getNewBet()
         
         dealer.setCardForDealer(newCards: dealer.getCards(count: 2))
         player.setCards(newCards: dealer.getCards(count: 2))
@@ -21,7 +32,7 @@ class Game{
         dealer.showVisibleCardsOfDealer(showAll: false)
         player.showAllCardsDetail()
         
-        while (dealer.isUserWantNextCart() && dealer.canUserContinue()) {
+        while (dealer.isUserWantNextCard() && dealer.canUserContinue()) {
             // Set new cards
             dealer.setCardForDealer(newCards: dealer.getCards(count: 1))
             player.setCards(newCards: dealer.getCards(count: 1))
@@ -45,22 +56,29 @@ class Game{
         }
         
         let gameResult: GameResult  = dealer.checkResult(playerScore: player.getPlayerScore())
+
         print("**************** Done ******************")
         switch (gameResult) {
         case .LOSE:
             print("User LOSE")
-            break
+            player.setPlayerPoint(bet: -bet)
         case .SCORELESS:
             print("User SCORELESS")
-            break
         case .WIN:
             print("User WIN")
-            break
+            player.setPlayerPoint(bet: bet)
         }
         
         // Show Cards Detail
         dealer.showVisibleCardsOfDealer(showAll: true)
         player.showAllCardsDetail()
+    }
+    
+    func checkStartBalance() {
+        if player.getPlayerPoint() <= 0 {
+            print("You are so poor");
+            exit(0)
+        }
     }
     
 

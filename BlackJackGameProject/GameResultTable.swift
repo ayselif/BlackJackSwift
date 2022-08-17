@@ -2,5 +2,7 @@
 import Foundation
 
 enum GameResult {
-    case WIN, LOSE, SCORELESS
+    case WIN
+    case LOSE
+    case SCORELESS
 }
